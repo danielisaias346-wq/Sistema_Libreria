@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros</title>
+    <!-- Vinculación con el archivo de estilos externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAV / BARRA DE NAVEGACIÓN -->
+    <nav class="navegacion">
+        <a href="index.html">Libro</a>
+        <a href="prestamo.html">Préstamos</a>
+        <a href="usuario.html">Usuario</a>
+    </nav>
+
+    <!-- CONTENEDOR CENTRAL -->
+    <main class="contenedor">
+
+        <!-- SECCIÓN DE LA TABLA CENTRADA -->
+        <section class="seccion-tabla">
+            <table class="tabla">
+                <thead class="columnas">
+                    <tr>
+                        <th class="columna">Id Prestamo</th>
+                        <th class="columna">Usuario</th>
+                        <th class="columna">Libro</th>
+                        <th class="columna">Fecha Incial</th>
+                        <th class="columna">Fecha Devolucion</th>
+                        <th class="columna">Estado</th>
+
+                    </tr>
+                </thead>
+
+            </table>
+        </section>
+
+        <!-- SECCIÓN INFERIOR DE ACCIONES -->
+        <section class="paneles-gestion">
+
+            <!-- FORMULARIO: REGISTRAR / MODIFICAR -->
+            <div class="tarjeta-formulario">
+                <h2>Registrar o Modificar Prestamo</h2>
+                <form>
+                    <div class="grupo-input">
+                        <label for="form-id">ID del Prestamo (Solo para Modificar)</label>
+                        <input type="text" id="form-id" placeholder="Ej: 001">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-titulo">Usuario</label>
+                        <input type="number" id="form-titulo" placeholder="ID del usuario">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-autor">Libro</label>
+                        <input type="number" id="form-autor" placeholder="ID del Libro">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-isbn">Fecha Inicial</label>
+                        <input type="datetime-local" id="form-isbn" placeholder="Ej: 24/06/2026 08:23:23">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-stock">Fecha Devolucion</label>
+                        <input type="date" id="form-stock" placeholder="Ej: 10/07/2026">
+                    </div>
+                     <div class="grupo-input">
+                        <label for="form-stock">Estado</label>
+                        <input type="text" id="form-stock" placeholder="Ej: Activo">
+                    </div>
+
+                    <div class="botones-accion">
+                        <button type="submit" class="btn btn-primario">Agregar Libro</button>
+                        <button type="button" class="btn btn-modificar">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FORMULARIO: BUSCAR Y ELIMINAR -->
+            <div class="tarjeta-formulario">
+                <h2>Acciones de Búsqueda y Baja</h2>
+                <form>
+                    <div class="grupo-input">
+                        <label for="buscar-id">Buscar por ID de Prestamo</label>
+                        <input type="text" id="buscar-id" placeholder="Ingresa el ID a buscar o eliminar">
+                    </div>
+
+                    <div class="botones-accion">
+                        <button type="button" class="btn btn-buscar">Buscar</button>
+                        <button type="button" class="btn btn-peligro">Eliminar Prestamo</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>

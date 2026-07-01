@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros</title>
+    <!-- Vinculación con el archivo de estilos externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAV / BARRA DE NAVEGACIÓN -->
+    <nav class="navegacion">
+        <a href="index.html">Libro</a>
+        <a href="prestamo.html">Préstamos</a>
+        <a href="usuario.html">Usuario</a>
+    </nav>
+
+    <!-- CONTENEDOR CENTRAL -->
+    <main class="contenedor">
+
+        <!-- SECCIÓN DE LA TABLA CENTRADA -->
+        <section class="seccion-tabla">
+            <table class="tabla">
+                <thead class="columnas">
+                    <tr>
+                        <th class="columna">Id</th>
+                        <th class="columna">Título</th>
+                        <th class="columna">Autor</th>
+                        <th class="columna">Isbn</th>
+                        <th class="columna">Stock</th>
+                    </tr>
+                </thead>
+
+                <tbody id="lista-libros">
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN INFERIOR DE ACCIONES -->
+        <section class="paneles-gestion">
+
+            <!-- FORMULARIO: REGISTRAR / MODIFICAR -->
+            <div class="tarjeta-formulario">
+                <h2>Registrar o Modificar Libro</h2>
+                <form id="formulario">
+                    <div class="grupo-input">
+                        <label for="form-id">ID del Libro (Solo para Modificar)</label>
+                        <input type="text" id="form-id" placeholder="Ej: 001">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="form-titulo">Título</label>
+                        <input type="text" id="form-titulo" placeholder="Nombre del libro">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-autor">Autor</label>
+                        <input type="text" id="form-autor" placeholder="Nombre del autor">
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="form-stock">Cantidad en Stock</label>
+                        <input type="number" id="form-stock" placeholder="Ej: 10" min="1" step="1" required>
+                    </div>
+
+                    <div class="botones-accion">
+                        <button type="submit" class="btn btn-primario " id="btn-primario">Agregar Libro</button>
+                        <button type="button" class="btn btn-modificar" id="btn-modificar">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FORMULARIO: BUSCAR Y ELIMINAR -->
+            <div class="tarjeta-formulario">
+                <h2>Acciones de Búsqueda y Baja</h2>
+                <form>
+                    <div class="grupo-input">
+                        <label for="buscar-id">Buscar por ID de Libro</label>
+                        <input type="text" id="buscar-id" placeholder="Ingresa el ID a buscar o eliminar">
+                    </div>
+
+                    <div class="botones-accion">
+                        <button type="button" class="btn btn-buscar" id="btn-buscar">Buscar</button>
+                        <button type="button" class="btn btn-peligro" id="btn-eliminar">Eliminar Libro</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="javascript/Libro/agregar.js"></script>
+    <script type="module" src="javascript/Libro/actualizar.js"></script>
+    <script type="module" src="javascript/Libro/buscar.js"></script>
+    <script type="module" src="javascript/Libro/lista.js"></script>
+    <script type="module" src="javascript/Libro/eliminar.js"></script>
+    <script type="module" src="javascript/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Libros</title>
+    <!-- Vinculación con el archivo de estilos externo -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAV / BARRA DE NAVEGACIÓN -->
+    <nav class="navegacion">
+        <a href="index.html">Libro</a>
+        <a href="prestamo.html">Préstamos</a>
+        <a href="usuario.html">Usuario</a>
+    </nav>
+
+    <!-- CONTENEDOR CENTRAL -->
+    <main class="contenedor">
+        
+        <!-- SECCIÓN DE LA TABLA CENTRADA -->
+        <section class="seccion-tabla">
+            <table class="tabla">
+                <thead class="columnas">
+                    <tr>
+                        <th class="columna">Id</th>
+                        <th class="columna">Nombre</th>
+                        <th class="columna">Correo</th>
+                        <th class="columna">Fecha Registro</th>
+                        <th class="columna">UserName</th>
+                        <th class="columna">Password</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-usuarios"></tbody>
+            </table>
+        </section>
+
+        <!-- SECCIÓN INFERIOR DE ACCIONES -->
+        <section class="paneles-gestion">
+            
+            <!-- FORMULARIO: REGISTRAR / MODIFICAR -->
+            <div class="tarjeta-formulario">
+                <h2>Registrar o Modificar Usuario</h2>
+                <form id="formulario">
+                    <div class="grupo-input">
+                        <label for="form-id">ID del Usuario (Solo para Modificar)</label>
+                        <input type="text" id="form-id" placeholder="Ej: 001">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-titulo">Nombre</label>
+                        <input type="text" id="form-nombre" placeholder="Nombre completo del usuario">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-autor">Correo</label>
+                        <input type="text" id="form-correo" placeholder="Ej: danielisaias345@gmail.com">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-isbn">Fecha Registro</label>
+                        <input type="date" id="form-fec" placeholder="Ej: 978-xxxxxxxxxx">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-isbn">Nombre de Usuario</label>
+                        <input type="text" id="form-username" placeholder="Ej: isa208">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="form-isbn">Contraseña</label>
+                        <input type="password" id="form-pass" placeholder="Ej: 2719231">
+                    </div>
+                    
+                    <div class="botones-accion">
+                        <button type="submit" class="btn btn-primario" id="btn-agregar">Agregar Usuario</button>
+                        <button type="button" class="btn btn-modificar" id="btn-modificar">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FORMULARIO: BUSCAR Y ELIMINAR -->
+            <div class="tarjeta-formulario">
+                <h2>Acciones de Búsqueda y Baja</h2>
+                <form>
+                    <div class="grupo-input">
+                        <label for="buscar-id">Buscar por ID de Usuario</label>
+                        <input type="text" id="buscar-id" placeholder="Ingresa el ID a buscar o eliminar">
+                    </div>
+                    
+                    <div class="botones-accion">
+                        <button type="button" class="btn btn-buscar">Buscar</button>
+                        <button type="button" class="btn btn-peligro">Eliminar Usuario</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="javascript/script.js"></script>
+    <script src="javascript/Usuario/ListaUsuario.js"></script>
+    <script src="javascript/Usuario/AgregarUser.js"></script>
+
+</body>
+</html>
