@@ -2,6 +2,9 @@ package com.sistema.Libreria.Servicios;
 
 import com.sistema.Libreria.Modelo.Usuario;
 import com.sistema.Libreria.Repository.UsuarioRepository;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -10,6 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@Slf4j
 @Service
 public class UsuarioService {
 
@@ -39,14 +43,17 @@ public class UsuarioService {
 
     }
 
-    public ResponseEntity<Void> delete(int id) {
-        if (repo.existsById(id)) {
-            repo.deleteById(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Usuario buscarUserId(Integer id) {
+        return repo.findById(id).orElseThrow(() -> new RuntimeException("Error no se encontró el usuario " + id));
     }
+
+    public void delete(Integer id) {
+           this.buscarUserId(id);
+           repo.deleteById(id);
+
+    }
+
+
 
 
 }

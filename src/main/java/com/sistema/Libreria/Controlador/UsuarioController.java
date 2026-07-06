@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario")
@@ -31,8 +32,13 @@ public class UsuarioController {
         return service.update(id,usuario);
     }
 
+    @PatchMapping("/buscarId/{id}")
+    public Usuario buscarId(@PathVariable Integer id){
+        return service.buscarUserId(id);
+    }
+
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id ){
-        return service.delete(id);
+    public void delete(@PathVariable Integer id ){
+        service.delete(id);
     }
 }

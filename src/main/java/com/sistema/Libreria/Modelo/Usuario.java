@@ -44,13 +44,6 @@ public class Usuario {
         return fechaRegistro.format(fecha_Formateada);
     }
 
-    @Column(name = "username", nullable = false, unique = true, length = 20)
-    private String username;
-
-    @Column(name = "password", nullable = false)
-    private Integer password;
-
-
     //Establece relacion de m-m
     @OneToMany(mappedBy = "idUsuario")
     private List<Prestamo> prestamosLista;
