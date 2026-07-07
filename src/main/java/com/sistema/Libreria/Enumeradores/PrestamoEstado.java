@@ -1,24 +1,25 @@
 package com.sistema.Libreria.Enumeradores;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import lombok.Getter;
 
 @Getter
 public enum PrestamoEstado {
 
-    ACTIVO("Activo"),
-    INACTIVO("Inactivo");
+    ACTIVO,
+    DEVUELTO,
+    RETRASADO;
 
-    private String estado;
 
     //Constructor
-    PrestamoEstado(String estado){
-        this.estado=estado;
-    }
+    @JsonCreator
+     public static PrestamoEstado estado(String valor){
+         if(valor == null){
+             return null;
+         }
+         return PrestamoEstado.valueOf(valor.toUpperCase());
+     }
 
-    //Indica que en el JSON coloque si esta ACTIVO o INACTIVO
-    @JsonGetter
-    public String getEstado() {
-        return estado;
-    }
+
 }

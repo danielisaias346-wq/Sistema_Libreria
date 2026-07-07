@@ -1,5 +1,7 @@
 package com.sistema.Libreria.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +17,7 @@ import java.util.List;
 public class Libro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idLibro")
+    @Column(name = "idLibro", nullable = false)
     private Integer idLibro;
     @Column(name = "titulo")
     private String titulo;

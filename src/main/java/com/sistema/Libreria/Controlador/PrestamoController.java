@@ -1,12 +1,15 @@
 package com.sistema.Libreria.Controlador;
 
 import com.sistema.Libreria.Modelo.Prestamo;
+import com.sistema.Libreria.Modelo.PrestamoDto;
 import com.sistema.Libreria.Servicios.PrestamoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/prestamo")
@@ -16,7 +19,7 @@ public class PrestamoController {
     private PrestamoService service;
 
     @PostMapping("/crear")
-    public Prestamo create(@RequestBody Prestamo prestamo){
+    public Prestamo create(@RequestBody PrestamoDto prestamo){
         return  service.create(prestamo);
     }
 
@@ -26,12 +29,13 @@ public class PrestamoController {
     }
 
     @PutMapping("/modificar/{id}")
-    public ResponseEntity<Prestamo> updateEstado(@PathVariable Integer id,@RequestBody Prestamo prestamo ){
-        return service.updateEstado(id,prestamo);
+    public ResponseEntity<Prestamo> update(@PathVariable Integer id, @RequestBody PrestamoDto dto ){
+        Prestamo prestamoActualizado = service.update(id,dto);
+        return ResponseEntity.ok(prestamoActualizado);
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
-        return service.delete(id);
+    public void delete(@PathVariable Integer id){
+         service.delete(id);
     }
 }
