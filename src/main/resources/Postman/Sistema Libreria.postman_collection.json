@@ -1,0 +1,429 @@
+{
+  "info": {
+    "_postman_id": "846db5cb-16df-482b-b8a8-a95b5527abaf",
+    "name": "Sistema Libreria",
+    "description": "**Entrega final de API REST con Spring boot y MySQL, de Isaias Daniel Lemos 46090059, del curso Backend con Java, de la comision** 26139",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55256127",
+    "_collection_link": "https://go.postman.co/collection/55256127-846db5cb-16df-482b-b8a8-a95b5527abaf?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/usuario/lista",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "usuario",
+                "lista"
+              ]
+            },
+            "description": "Endpoint GET { Listar Usuarios } -> URL [http://localhost:9090/usuario/lista](http://localhost:9090/usuario/lista)\n\nsi el resultado es 200OK emite por consola los objetos en formato JSON"
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"isaias daniel Blanco\",\r\n    \"email\": \"danielblancoIsaias1234@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/usuario/crear",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "usuario",
+                "crear"
+              ]
+            },
+            "description": "Endpoint POST\n\n\\* Se crea un objeto JSON para crear un usuario, ejemplo :\n\n**{**\n\n**\"nombre\": \"isaias daniel Blanco\",**\n\n**\"email\": \"**[<b>danielblancoIsaias1234@gmail.com</b>](https://mailto:danielblancoIsaias1234@gmail.com)**\"**\n\n**}**\n\nSi el resultado es 200OK se emite por consola el objeto creado en formato JSON, los campos de Fecha se autorellenan solo con el formato de LocalDate para guardar la fecha actual una vez creado el usuario, hay dos una fecha por defecto que es yyyy/MM/dd y en el otro esta la fecha formateada dd/MM/yyyy"
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Usuario ID",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/usuario/buscarId/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "usuario",
+                "buscarId",
+                "6"
+              ]
+            },
+            "description": "Endpoint PATCH para buscar un usuario por ID de la siguiente manera :\n\n[http://localhost:9090/usuario/buscarId/6](http://localhost:9090/usuario/buscarId/6)  \ndonde se ingresa el numero del id de la siguente manera usuario/buscarId/{id}\n\nSi el resultado es 200OK emite por consola el objeto en formato JSON"
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/usuario/eliminar/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "usuario",
+                "eliminar",
+                "6"
+              ]
+            },
+            "description": "Endpoint DELETE para borrar un usuario dependiendo del ID:\n\n[http://localhost:9090/usuario/eliminar/6](http://localhost:9090/usuario/eliminar/6)\n\nejemplo: usuario/eliminar/{id}"
+          },
+          "response": []
+        },
+        {
+          "name": "Modificar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\" : \"Isaias Lemos\",\r\n    \"email\" : \"danieiosa@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/usuario/modificar/12",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "usuario",
+                "modificar",
+                "12"
+              ]
+            },
+            "description": "Endpoint PUT para modificar el usuario segun su ID :\n\n[http://localhost:9090/usuario/modificar/12](http://localhost:9090/usuario/modificar/12)\n\nen formato JSON se ejecuta de la siguiente manera :\n\n{\n\n\"nombre\" : \"nombre \",\n\n\"email\": \"[email@email.com](https://mailto:email@email.com)\"\n\n}"
+          },
+          "response": []
+        }
+      ],
+      "description": "Carpeta donde se contiene todos los endpoints de la clase UsuarioController"
+    },
+    {
+      "name": "Libro",
+      "item": [
+        {
+          "name": "Listar Libro",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/libro/lista",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "libro",
+                "lista"
+              ]
+            },
+            "description": "Endpoint GET para listar todos los objetos de clase libro creados"
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Libro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \r\n \"titulo\" : \"Spiderman\",\r\n \"autor\" : \"Stanlee\",\r\n \"stock\" : 21\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/libro/crear",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "libro",
+                "crear"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modificar Libro",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \r\n \"titulo\" : \"Spiderman\",\r\n \"autor\" : \"Stanlee\",\r\n \"stock\" : 21,\r\n \"prestamoLista\" : \"ACTIVO\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9090/libro/actualizar/11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "libro",
+                "actualizar",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Libro",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \r\n \"titulo\" : \"Spiderman\",\r\n \"autor\" : \"Stanlee\",\r\n \"stock\" : 21,\r\n \"prestamoLista\" : \"ACTIVO\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9090/libro/eliminar/11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "libro",
+                "eliminar",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Libro ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \r\n \"titulo\" : \"Spiderman\",\r\n \"autor\" : \"Stanlee\",\r\n \"stock\" : 21,\r\n \"prestamoLista\" : \"ACTIVO\"\r\n\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:9090/libro/buscarId/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "libro",
+                "buscarId",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Carpeta donde se contiene los endpoints de la clase LibroController"
+    },
+    {
+      "name": "Prestamos",
+      "item": [
+        {
+          "name": "Listar Prestamos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/prestamo/lista",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "prestamo",
+                "lista"
+              ]
+            },
+            "description": "Endpoint para listar los prestamos creados en la BD\n\nhttp://localhost:9090/prestamo/lista"
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Prestamo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"idLibro\": 2,\r\n    \"idUsuario\": 12,\r\n    \"fechaDevolucion\": \"2026-10-07\",\r\n    \"estadoActual\": \"ACTIVO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/prestamo/crear",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "prestamo",
+                "crear"
+              ]
+            },
+            "description": "Endpoint POST para crear un prestamo de la siguiente manera en formato JSON :\n\n**{ \"idLibro\": 2, \"idUsuario\": 12, \"fechaDevolucion\": \"2026-10-07\", \"estadoActual\": \"ACTIVO\" }**\n\ny si el estado es 200OK devuelve algo como esto :\n\n**{  \n\"idPrestamo\": 10,  \n\"fechaPrestamo\": \"06/07/2026\",  \n\"fechaDevolucion\": \"07/10/2026\",  \n\"estadoActual\": \"ACTIVO\",  \n\"idUsuario\": {  \n\"idUsuario\": 12,  \n\"nombre\": \"isaias daniel Blanco\",  \n\"email\": \"**[<b>danielblancoIsaias1234@gmail.com</b>](https://mailto:danielblancoIsaias1234@gmail.com)**\",  \n\"fechaRegistro\": \"2026-07-05\",  \n\"fechaFormateada\": \"05/07/2026\"  \n},  \n\"idLibro\": {  \n\"idLibro\": 2,  \n\"titulo\": \"El resplandor 2\",  \n\"autor\": \"vangogh\",  \n\"isbn\": \"4514546706431\",  \n\"stock\": 21  \n}  \n}**"
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Prestamo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9090/prestamo/eliminar/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "prestamo",
+                "eliminar",
+                "1"
+              ]
+            },
+            "description": "Endpoint DELETE para eliminar un prestamo segun el ID :\n\n  \n**http://localhost:9090/prestamo/eliminar/1**"
+          },
+          "response": []
+        },
+        {
+          "name": "Modificar Prestamo",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"idLibro\" : 9,\r\n    \"idUsuario\" : 12,\r\n    \"fechaDevolucion\" : \"2026-09-23\",\r\n    \"estado\" : \"DEVUELTO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9090/prestamo/modificar/9",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9090",
+              "path": [
+                "prestamo",
+                "modificar",
+                "9"
+              ]
+            },
+            "description": "Endpoint PUT para modificar un prestamo segun su ID, se debe de modificar sus propiedades de la siguiente manera :\n\n**{\"idLibro\" : 9,\"idUsuario\" : 12,\"fechaDevolucion\" : \"2026-09-23\",\"estado\" : \"DEVUELTO\"}**\n\ny se devuelve un mensaje de confirmacion 200OK como el siguiente:\n\n**{  \n\"idPrestamo\": 9,  \n\"fechaPrestamo\": \"06/07/2026\",  \n\"fechaDevolucion\": \"23/09/2026\",  \n\"estadoActual\": \"DEVUELTO\",  \n\"idUsuario\": {  \n\"idUsuario\": 12,  \n\"nombre\": \"isaias daniel Blanco\",  \n\"email\": \"**[<b>danielblancoIsaias1234@gmail.com</b>](https://mailto:danielblancoIsaias1234@gmail.com)**\",  \n\"fechaRegistro\": \"2026-07-05\",  \n\"fechaFormateada\": \"05/07/2026\"  \n},  \n\"idLibro\": {  \n\"idLibro\": 9,  \n\"titulo\": \"Martin Fierro La leyenda\",  \n\"autor\": \"Martin fierro\",  \n\"isbn\": \"1111291429150\",  \n\"stock\": 43  \n}  \n}**"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "bd_url",
+      "value": ""
+    },
+    {
+      "key": "api_url",
+      "value": ""
+    },
+    {
+      "key": "createdUser_id",
+      "value": ""
+    },
+    {
+      "key": "createdLibro_id",
+      "value": ""
+    }
+  ]
+}
