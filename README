@@ -1,0 +1,8 @@
+La funcionalidad del Sistema Libreria donde hay Endpoints de tipo CRUD 
+como: 
+GET 
+POST 
+PUT
+DELETE
+al darle run al proyecto desde un IDE determinado e importar el archivo { SistemaLibreria.postman_collection } a Postman 
+se podra ejecutar las funcionalidades como las que estan en este video : https://youtu.be/VXN4_Xpq5u0
