@@ -1,8 +1,85 @@
-La funcionalidad del Sistema Libreria donde hay Endpoints de tipo CRUD 
-como: 
-GET 
-POST 
-PUT
-DELETE
-al darle run al proyecto desde un IDE determinado e importar el archivo { SistemaLibreria.postman_collection } a Postman 
-se podra ejecutar las funcionalidades como las que estan en este video : https://youtu.be/VXN4_Xpq5u0
+# 📚 Sistema de Librería - API REST (Backend Java)
+
+Este proyecto consiste en el desarrollo del backend para un **Sistema de Gestión de Librería**. Ha sido construido utilizando las tecnologías más demandadas del mercado como parte del proyecto final para la academia **Buenos Aires Talento Tech** (Comisión 26139).
+
+El objetivo principal es proveer una **API REST** robusta y escalable que permita administrar los recursos del sistema de forma eficiente.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+El desarrollo del backend se basó en el ecosistema de Java, utilizando herramientas modernas para garantizar un rendimiento óptimo y buenas prácticas de codificación:
+
+* **Lenguaje:** [Java](https://oracle.com)
+* **Framework Principal:** [Spring Boot](https://spring.io)
+* **Persistencia de Datos:** Spring Data JPA / Hibernate
+* **Base de Datos:** [MySQL](https://mysql.com)
+* **Gestor de Dependencias:** Maven / Gradle
+* **Arquitectura:** Arquitectura Limpia basada en capas (Controller, Service, Repository, Entity)
+
+---
+
+## 🚀 Características y Funcionalidades
+
+La API está diseñada siguiendo los principios REST y maneja operaciones CRUD completas para las entidades del sistema:
+
+* 🔐 **Validación de Datos:** Restricciones de negocio aplicadas mediante anotaciones.
+* 📦 **Gestión de Entidades:** Administración y persistencia de libros, autores, categorías y stock.
+* 📡 **Endpoints Claros:** Rutas estandarizadas para el consumo de información desde aplicaciones cliente o frontend.
+* 💾 **Relaciones Complejas:** Mapeo de relaciones relacionales de base de datos a través de JPA.
+
+---
+
+## 💻 Configuración e Instalación
+
+Para ejecutar este proyecto de forma local en tu máquina, sigue los siguientes pasos:
+
+### 1. Requisitos Previos
+Asegúrate de tener instalado:
+* **Java JDK** (Versión 17 o superior)
+* **MySQL Server**
+* Un IDE de desarrollo (IntelliJ IDEA, Eclipse, VS Code) o herramientas de consola.
+
+### 2. Clonar el Repositorio
+Usa la consola para clonar el proyecto y asegúrate de ubicarte en la rama de backend:
+```bash
+git clone https://github.com/danielisaias346-wq/Sistema_Libreria.git
+cd Sistema_Libreria
+git checkout Backend_Java
+```
+
+### 3. Configurar la Base de Datos
+Crea una base de datos en tu servidor MySQL (por ejemplo, llamada `sistema_libreria`). Luego, abre el archivo `src/main/resources/application.properties` y edita las siguientes propiedades con tus credenciales locales:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/sistema_libreria?useSSL=false&serverTimezone=UTC
+spring.datasource.username=TU_USUARIO_MYSQL
+spring.datasource.password=TU_CONTRASENA_MYSQL
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### 4. Ejecutar la Aplicación
+Puedes iniciar el servidor desde tu IDE ejecutando la clase principal del proyecto o utilizando la consola de comandos desde la carpeta raíz del Backend:
+```bash
+./mvnw spring-boot:run
+---
+
+## 📐 Estructura del Proyecto
+
+El código está organizado bajo un estándar limpio para facilitar el mantenimiento y la escalabilidad del sistema:
+
+* 📁 `controller/`: Define los endpoints HTTP expuestos por la API REST.
+* 📁 `service/`: Contiene la lógica de negocio central del sistema de la librería.
+* 📁 `repository/`: Capa encargada de las consultas y la persistencia a la base de datos (Spring Data JPA).
+* 📁 `model/` / `entity/`: Clases que representan las tablas de la base de datos MySQL.
+
+---
+
+## ✒️ Autor
+
+* **Isaias Daniel Lemos** - *Desarrollador del Proyecto* - [danielisaias346-wq](https://github.com/danielisaias346-wq)
+
+---
+*Nota: La carpeta Front-End presente en la rama raíz se encuentra actualmente en desarrollo y no es completamente funcional. Toda la lógica operativa principal de este proyecto reside dentro de esta rama (`Backend_Java`),
+una vez completado toda la configuracion se podra ejecutar las funcionalidades como las que estan en este video : https://youtu.be/VXN4_Xpq5u0 *
+
